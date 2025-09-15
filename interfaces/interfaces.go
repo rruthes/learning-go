@@ -1,8 +1,12 @@
 package main
 
-import "fmt"
-// isso é possível usando as interfaces.
+import (
+	"fmt"
+	"math"
+)
+
 // digamos que eu quero fazer uma funcao de calculararea, que seja usada pelos dois structs. eu nao conseguiria fazer isso, dado que não seria possivel passar simultaneamente as variaveis do struct circulo e do struct retangulo.
+// isso é possível usando as interfaces.
 type forma interface { // recebe apenas assinaturas de métodos
 	area() float64
 }
@@ -25,7 +29,7 @@ type circulo struct {
 }
 
 func(c circulo) area() float64 {
-	return c.raio * c.raio * 3.14
+	return c.raio * c.raio * math.Pi
 }
 
 func main() {
